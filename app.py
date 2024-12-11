@@ -6,8 +6,9 @@ from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, redirect, send_file
 import os
 from video_processing import process_video
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 UPLOAD_FOLDER = 'uploads'
 PROCESSED_FOLDER = 'processed'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
